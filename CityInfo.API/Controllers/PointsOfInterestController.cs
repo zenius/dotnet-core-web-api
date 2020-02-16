@@ -22,7 +22,7 @@ namespace CityInfo.API.Controllers
     }
 
     [HttpGet("{Id}")]
-    public IActionResult GetSinglePointOfInterest(int cityId, int pointOfInterestId)
+    public IActionResult GetSinglePointOfInterest(int cityId, int Id)
     {
       var cityToReturn = CityData.Current.Cities.FirstOrDefault(city => city.Id == cityId);
 
@@ -31,7 +31,7 @@ namespace CityInfo.API.Controllers
         return NotFound();
       }
 
-      var pointOfInterest = cityToReturn.PointsOfInterests.FirstOrDefault(p => p.Id == pointOfInterestId);
+      var pointOfInterest = cityToReturn.PointsOfInterests.FirstOrDefault(p => p.Id == Id);
 
       if (pointOfInterest == null)
       {
