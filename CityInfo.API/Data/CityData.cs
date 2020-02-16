@@ -10,10 +10,40 @@ namespace CityInfo.API.Data
 
     public CityData()
     {
-      Cities = new List<City>()
-      {
-          new  City{ Id = 1 , Name =  "Kakinada", Description = "First Smart City in Andhra Pradesh"},
-          new  City{ Id = 2 , Name = "Hyderabad", Description = "City of Biryani"}
+      Cities = new List<City>() {
+        new City {
+          Id = 1,
+          Name = "Kakinada",
+          Description = "First Smart City in Andhra Pradesh",
+          PointsOfInterests = {
+            new PointsOfInterest {
+              Id = 1,
+              Name = "Kakinada beach",
+              Description = "Famous destination for weekend"
+            },
+            new PointsOfInterest {
+              Id = 2,
+              Name = "JNTUK",
+              Description = "Educational instution for master and bachelor in engineering"
+            }
+          }
+
+        },
+        new City {
+          Id = 2,
+          Name = "Hyderabad",
+          Description = "City of Biryani",
+
+          PointsOfInterests = {
+            new PointsOfInterest {
+              Id = 3,
+              Name = "Paradise",
+              Description = "Legend in making Biryani"
+            },
+
+          }
+
+        }
       };
     }
   }
