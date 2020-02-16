@@ -15,6 +15,9 @@ namespace CityInfo.API
       services.AddMvc(options =>
       {
         options.EnableEndpointRouting = false;
+      }).AddJsonOptions(options =>
+      {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
       });
     }
 
