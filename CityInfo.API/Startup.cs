@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -15,6 +16,7 @@ namespace CityInfo.API
       services.AddMvc(options =>
       {
         options.EnableEndpointRouting = false;
+        options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
       }).AddJsonOptions(options =>
       {
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
