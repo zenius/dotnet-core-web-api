@@ -15,13 +15,13 @@ namespace CityInfo.API.Data
           Id = 1,
           Name = "Kakinada",
           Description = "First Smart City in Andhra Pradesh",
-          PointsOfInterests = {
-            new PointsOfInterest {
+          PointsOfInterest = {
+            new PointOfInterest {
               Id = 1,
               Name = "Kakinada beach",
               Description = "Famous destination for weekend"
             },
-            new PointsOfInterest {
+            new PointOfInterest {
               Id = 2,
               Name = "JNTUK",
               Description = "Educational instution for master and bachelor in engineering"
@@ -34,8 +34,8 @@ namespace CityInfo.API.Data
           Name = "Hyderabad",
           Description = "City of Biryani",
 
-          PointsOfInterests = {
-            new PointsOfInterest {
+          PointsOfInterest = {
+            new PointOfInterest {
               Id = 3,
               Name = "Paradise",
               Description = "Legend in making Biryani"
