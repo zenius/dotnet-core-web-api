@@ -1,0 +1,51 @@
+Notes:
+    -i, --include: displays the HTTP response headers.
+    -d implies an HTTP POST operation and defines the request body.
+    -H indicates that the request body is in JSON format.
+    The header's value overrides the default content type of application/x-www-form-urlencoded.
+    
+    -k, --insecure: This option explicitly allows curl to perform "insecure" SSL connections and transfers.
+    All SSL connections are attempted in secure mode using the CA certificate bundle installed by default. 
+    This makes all connections considered "insecure" fail unless -k, --insecure is used.(SSL).
+
+    -s, --silent: Silent or quiet mode. Don't show progress meter or error messages.
+
+    jq: The JSON is sent to the jq command-line JSON processor for improved display.
+
+    -X, --request: This flag will used to send custom request to the server. 
+    Most of the time we do GET, HEAD, and POST. 
+    But if you need specific request like PUT, FTP, DELETE then you can use this flag
+
+1. POST Request 
+// Invalid post request 
+// The field Price must be between 0.01 and 7.92281625142643E+28.
+  curl -i -k \
+    -H "Content-Type: application/json" \
+    -d "{\"name\":\"Plush Squirrel\",\"price\":0.00}" \
+    https://localhost:5001/products
+
+
+// Valid post request 
+curl -i -k \
+    -H "Content-Type: application/json" \
+    -d "{\"name\":\"Plush Squirrel\",\"price\":12.99}" \
+    https://localhost:5001/products
+
+
+2. GET Request 
+  // Get all products 
+  curl -k -s https://localhost:5001/products | jq
+
+ // Get product by id 
+  curl -k -s https://localhost:5001/products/3 | jq
+
+3. PUT Request 
+  curl -i -k \
+    -X PUT \
+    -H "Content-Type: application/json" \
+    -d "{\"id\":2,\"name\":\"Knotted Rope\",\"price\":14.99}" \
+    https://localhost:5001/products/2
+  
+4. DELETE Request 
+  curl -i -k -X DELETE https://localhost:5001/products/1
+ 

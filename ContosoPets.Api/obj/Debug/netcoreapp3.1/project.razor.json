@@ -1,0 +1,16 @@
+{
+  "FilePath": "/home/zenius/Desktop/dotnet-core-web-api-3.0/Contoso-pets/src/ContosoPets.Api/ContosoPets.Api.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": null,
+  "RootNamespace": "ContosoPets.Api",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
